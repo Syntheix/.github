@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Syntheix Corporation</h1>
+  <h1>Syntheix Enterprise</h1>
   <h3>Architecting the Native Fabric of Next-Generation Infrastructure</h3>
 </div>
 
