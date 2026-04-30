@@ -1,45 +1,56 @@
 <div align="center">
-  <h1>Syntheix Enterprise</h1>
-  <h3>Architecting the Native Fabric of Next-Generation Infrastructure</h3>
+  <h1>Syntheix Cloud</h1>
+  <h3>Thailand's sovereign developer cloud · คลาวด์ของไทย</h3>
+  <p>
+    <a href="https://syntheix.cloud">syntheix.cloud</a> ·
+    <a href="https://syntheix.cloud/docs/quickstart">Quickstart</a> ·
+    <a href="https://syntheix.cloud/changelog">Changelog</a> ·
+    <a href="https://syntheix.cloud/status">Status</a>
+  </p>
 </div>
 
 ---
 
-> **Syntheix** is a technology research and infrastructure engineering organization dedicated to pushing the boundaries of decentralized computing, autonomous orchestration, and bare-metal resource management. We design and deliver uncompromising, mission-critical systems that form the backbone of modern enterprise operations.
+> **Build on Thailand-domiciled cloud infrastructure.** PDPA-aligned, baht-denominated billing, the same primitives you already know from AWS — with TH latency and a real human at the other end of the line.
 
-## Corporate Vision & Engineering Doctrine
+## What ships today (alpha)
 
-At Syntheix, we believe that the future of enterprise computing demands a paradigm shift from managed abstractions to high-fidelity, deterministic hardware control. Our engineering doctrine is rooted in three foundational pillars:
+| Surface | Live at | Source |
+|---|---|---|
+| 🌐 Marketing + docs | [syntheix.cloud](https://syntheix.cloud) | [Syntheix/www](https://github.com/Syntheix/www) |
+| 🔐 Identity (SSO via Keycloak) | [auth.syntheix.cloud](https://auth.syntheix.cloud) | (Keycloak realm) |
+| ⚙ Control-plane API (Bun + Hono + Drizzle) | [api.syntheix.cloud](https://api.syntheix.cloud) | [Syntheix/api](https://github.com/Syntheix/api) |
+| 🖥 Admin console (Next.js 16) | [console.syntheix.cloud](https://console.syntheix.cloud) | [Syntheix/console](https://github.com/Syntheix/console) |
+| 📦 Object Storage (S3-compatible) | [s3.syntheix.cloud](https://s3.syntheix.cloud) | (MinIO + control-plane routes) |
+| 🛠 `syx` CLI (Go, multi-platform) | one binary, every service | [Syntheix/cli](https://github.com/Syntheix/cli) |
+| 📊 Live agent observability | localhost:4242 (dev tool) | [Syntheix/board](https://github.com/Syntheix/board) |
 
-### 1. Zero-Frictional Abstraction
-We advocate for software topologies that minimize the latency between the orchestration layer and the physical execution environment. By stripping away redundant virtualization management layers, we empower organizations to harness the absolute maximum throughput of their bare-metal assets.
+## Engineering principles
 
-### 2. Autonomous Decentralization
-Legacy infrastructure heavily relies on fragile, centralized state machines. Syntheix pioneers distributed architectures where edge nodes possess high operational autonomy. In the event of network segmentation or upstream orchestration failure, our edge systems maintain localized determinism, ensuring zero disruption to foundational workloads.
+1. **Thai sovereignty by default.** Every byte of customer data lives on hardware in Thailand. PDPA isn't a checkbox — it's the architecture.
+2. **Same primitives, different gravity.** S3-compatible buckets, Postgres, VMs (Q3), K8s (Q4) — APIs you already know, hosted next door.
+3. **Boring stack, fast iteration.** Bun + Hono + Drizzle + Postgres + Keycloak + Cloudflare Tunnel + MinIO. No exotic infra; production-grade plumbing.
+4. **Heterogeneous fleet from day one.** Every container image is multi-arch (linux/amd64 + linux/arm64). The substrate runs on a rack server today and is built to absorb PCs, ARM SBCs, and Apple Silicon Macs as workers.
+5. **Build in public.** Every release lands in [the changelog](https://syntheix.cloud/changelog) the day it ships. No press releases, no bait, no fake uptime numbers.
 
-### 3. Absolute Observability
-Infrastructure is only as reliable as its telemetry. We engineer out-of-band monitoring channels that provide microsecond-resolution visibility into every computing layer—from high-level REST API requests down to underlying CPU instruction cycles and kernel-level storage I/O—without imposing overhead on execution workloads.
+## Roadmap
 
-## Core Competencies
+- **Q2 2026** (now) — Foundation: control plane, IAM, Object Storage, console, CLI ✅ · Stripe + e-Tax billing 🚧 · Terraform provider 🚧 · alpha launch with 5 friendly customers 🚧
+- **Q3 2026** — Compute (VMs · libvirt + cloud-init) · OVN networking · Managed Postgres · DNS-as-a-service · public beta · 30 customers · ฿80k MRR
+- **Q4 2026** — Managed Kubernetes · observability (Mimir + Loki + Tempo) · BaaS Postgres · Saraburi DR site · GA · 80 customers · ฿320k MRR
+- **Q1 2027** — ISO 27001 · PDPA compliance pack · ก.ล.ต. cyber resilience · first ฿1M+ enterprise contract
+- **Q2 2027** — Functions · Edge CDN · SNS/SQS-equivalent · 300+ customers · ฿2.5M MRR · breakeven
 
-Our engineering initiatives span across several deep-tech disciplines:
+[Full roadmap →](https://syntheix.cloud/#roadmap)
 
-* **Distributed Orchestration:** Developing highly concurrent, stateless control planes capable of synchronizing state across thousands of geographically dispersed compute nodes.
-* **Hardware-Level Integration:** Direct, programmatic interoperability with industry-standard and proprietary hypervisors (KVM, QEMU, libvirt, Xen).
-* **High-Performance Telemetry:** Building robust data pipelines utilizing WebSocket protocols and time-series aggregation for real-time infrastructure metrics.
-* **Automated Provisioning:** Declarative infrastructure-as-code (IaC) engines that transform complex deployment topologies into verifiable, repeatable operations.
-* **Secure Communications:** Implementing zero-trust frameworks, mutual TLS (mTLS), and cryptographic identity verifications for all inter-node traffic.
+## Contributing
 
-## Open Source Philosophy
+We're a small team (one engineer) right now, but we welcome PRs to any of the open repos. The CLI ([Syntheix/cli](https://github.com/Syntheix/cli)) is the lowest-friction entry point — small UX tweaks ship fast.
 
-Syntheix was founded on the principles of open collaboration and peer-reviewed software engineering. While our proprietary integrations serve Fortune 500 enterprises, we remain deeply committed to contributing core technological advancements back to the broader developer ecosystem. We actively maintain and sponsor projects targeting:
+## Contact
 
-- Go-based consensus algorithms and networking primitives.
-- React/Next.js architectures optimized for high-refresh-rate data visualization.
-- Embedded Linux and Buildroot configurations for edge computing.
+- General inquiries · [hi@syntheix.cloud](mailto:hi@syntheix.cloud)
+- Security disclosures · [security@syntheix.cloud](mailto:security@syntheix.cloud) (PGP at `/.well-known/pgp.asc`)
+- Waitlist for alpha access · [syntheix.cloud](https://syntheix.cloud) (footer form)
 
----
-
-<div align="center">
-  <i>For investment inquiries, enterprise engagement, or architectural consulting, please reach out through our official corporate channels.</i>
-</div>
+<sub>Built in 🇹🇭 · Apache 2.0 where applicable · See individual repos for licensing details</sub>
